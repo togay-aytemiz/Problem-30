@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function AddUsers() {
   const users = [{ name: 'Test', id: crypto.randomUUID() }]
 
-  const [userList, setUserList] = useState(users)
+  const [userList, setUserList] = useState([])
   const [userName, setUserName] = useState("")
 
   function handleAddUser(event) {
