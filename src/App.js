@@ -8,13 +8,18 @@ export default function AddUsers() {
   const [userName, setUserName] = useState("")
 
   function handleAddUser(event) {
-    event.preventDefault()
-    const newUser = {
+    if(userName === "") {
+      alert("Lütfen bir kullanıcı adı girin")
+    } else {
+      event.preventDefault()
+      const newUser = {
       name: userName,
       id: crypto.randomUUID(),
     }
     setUserList([...userList, newUser])
     setUserName("")
+    }
+    
   }
 
   function handleDeleteUser(userToDelete) {
